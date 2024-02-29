@@ -1,4 +1,5 @@
-import { TreeNode } from "../data-structures/trees";
+import { IMPOSSIBLE_TO_NARROW_ERROR } from "@/constants/error";
+import { TreeNode } from "@/data-structures/trees";
 
 function findBottomLeftValue(root: TreeNode | null): number {
   if (!root) {
@@ -18,7 +19,7 @@ function findBottomLeftValue(root: TreeNode | null): number {
     for (let i = 0; i < size; i += 1) {
       const front = queue.shift();
       if (!front) {
-        throw new Error("Something went wrong here");
+        throw new Error(IMPOSSIBLE_TO_NARROW_ERROR);
       }
 
       currentLevel.push(front.val);

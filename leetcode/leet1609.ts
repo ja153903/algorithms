@@ -1,4 +1,5 @@
-import type { TreeNode } from "../data-structures/trees";
+import { IMPOSSIBLE_TO_NARROW_ERROR } from "@/constants/error";
+import type { TreeNode } from "@/data-structures/trees";
 
 // This algorithms runs in O(n) time and space
 function isEvenOddTree(root: TreeNode | null): boolean {
@@ -18,7 +19,7 @@ function isEvenOddTree(root: TreeNode | null): boolean {
     for (let i = 0; i < size; i += 1) {
       const front = queue.shift();
       if (!front) {
-        throw new Error("Something went wrong with the test input");
+        throw new Error(IMPOSSIBLE_TO_NARROW_ERROR);
       }
 
       level.push(front.val);
