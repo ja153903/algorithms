@@ -36,23 +36,19 @@ function isEvenOddTree(root: TreeNode | null): boolean {
   }
 
   for (let i = 0; i < nodes.length; i += 1) {
-    if (i % 2 === 0) {
-      for (let j = 0; j < nodes[i].length; j += 1) {
-        if (
-          nodes[i][j] % 2 === 0 ||
-          (j > 0 && nodes[i][j - 1] >= nodes[i][j])
-        ) {
-          return false;
-        }
+    for (let j = 0; j < nodes[i].length; j += 1) {
+      if (
+        i % 2 === 0 &&
+        (nodes[i][j] % 2 === 0 || (j > 0 && nodes[i][j - 1] >= nodes[i][j]))
+      ) {
+        return false;
       }
-    } else {
-      for (let j = 0; j < nodes[i].length; j += 1) {
-        if (
-          nodes[i][j] % 2 === 1 ||
-          (j > 0 && nodes[i][j - 1] <= nodes[i][j])
-        ) {
-          return false;
-        }
+
+      if (
+        i % 2 === 1 &&
+        (nodes[i][j] % 2 === 1 || (j > 0 && nodes[i][j - 1] <= nodes[i][j]))
+      ) {
+        return false;
       }
     }
   }
