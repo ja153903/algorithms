@@ -108,4 +108,8 @@ export class BinaryHeap<T> {
   get size(): number {
     return this.container.length;
   }
+
+  get isEmpty(): boolean {
+    return this.size === 0;
+  }
 }
