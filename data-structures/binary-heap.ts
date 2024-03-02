@@ -92,7 +92,7 @@ export class BinaryHeap<T> {
   }
 
   dequeue(): T | null {
-    if (this.size === 0) {
+    if (this.isEmpty) {
       return null;
     }
 
