@@ -1,5 +1,4 @@
 # algorithms
 
-Algorithms in TypeScript
+Algorithms in TypeScript (Bun)
 
-# algorithms
