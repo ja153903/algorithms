@@ -21,6 +21,8 @@ function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
     fast = fast?.next ?? null;
   }
 
+  // NOTE: If no previous value is set, this means that
+  // we need to remove the head of the list
   if (!prev) {
     return head?.next ?? null;
   }
