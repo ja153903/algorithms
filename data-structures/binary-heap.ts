@@ -56,7 +56,7 @@ export class BinaryHeap<T> {
     // to make sure that we swap them if necessary
     const leftChildIndex = this.getLeftChildIndex(index);
     if (
-      leftChildIndex <= this.container.length - 1 &&
+      leftChildIndex <= this.size - 1 &&
       this.comparator(
         this.container[leftChildIndex],
         this.container[maxIndex],
@@ -71,7 +71,7 @@ export class BinaryHeap<T> {
     // to make sure that we swap them if necessary
     const rightChildIndex = this.getRightChildIndex(index);
     if (
-      rightChildIndex <= this.container.length - 1 &&
+      rightChildIndex <= this.size - 1 &&
       this.comparator(
           this.container[rightChildIndex],
           this.container[maxIndex]
@@ -88,7 +88,7 @@ export class BinaryHeap<T> {
 
   enqueue(item: T) {
     this.container.push(item);
-    this.shiftUp(this.container.length - 1);
+    this.shiftUp(this.size - 1);
   }
 
   dequeue(): T | null {
