@@ -50,4 +50,4 @@ export function dfs<T = string | number>(
 
 // TODO: Build this function
 // NOTE: This is for Topological Sort problems
-export function kahns<T>(graph: AdjancencyList<T>) {}
+export function kahns<T>(edges: [T, T][]) {}
