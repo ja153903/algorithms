@@ -4,7 +4,6 @@ function minimumLength(s: string): number {
   const list = s.split("");
 
   while (left < right) {
-    // find the longest chain of similar elements
     if (list[left] !== list[right]) {
       break;
     }
@@ -13,7 +12,7 @@ function minimumLength(s: string): number {
     let leftStart = left;
     let leftCount = 0;
 
-    while (left < right && s[left] === leftChar) {
+    while (left <= right && s[left] === leftChar) {
       leftCount += 1;
       left += 1;
     }
@@ -31,7 +30,7 @@ function minimumLength(s: string): number {
       list[i] = "";
     }
 
-    for (let i = rightStart - rightCount + 1; i <= rightStart; i += 1) {
+    for (let i = rightStart - rightCount + 1; i < rightStart + 1; i += 1) {
       list[i] = "";
     }
   }
