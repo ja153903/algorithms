@@ -8,3 +8,8 @@ test("UnionFind - numConnectedComponents", () => {
 
   expect(uf.numConnectedComponents).toBe(2);
 });
+
+test("UnionFind - numConnectedComponents should be number of nodes by default", () => {
+  const uf = new UnionFind(10);
+  expect(uf.numConnectedComponents).toBe(10);
+});
