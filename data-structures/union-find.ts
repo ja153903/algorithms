@@ -1,8 +1,10 @@
 export class UnionFind {
+  private numNodes: number;
   private rank: number[];
   private parent: number[];
 
   constructor(n: number) {
+    this.numNodes = n;
     this.rank = new Array(n).fill(0);
     this.parent = new Array(n);
 
@@ -34,5 +36,15 @@ export class UnionFind {
     }
 
     return this.parent[node];
+  }
+
+  get numConnectedComponents(): number {
+    const uniqParents = new Set<number>();
+
+    for (let i = 0; i < this.numNodes; i += 1) {
+      uniqParents.add(this.find(i));
+    }
+
+    return uniqParents.size;
   }
 }
