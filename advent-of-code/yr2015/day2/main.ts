@@ -1,11 +1,10 @@
-import { readFile } from "@/advent-of-code/utils";
+import { parseByLine, readFile } from "@/advent-of-code/utils";
 
 const data = await readFile(import.meta.dir, "day2.in");
 
-const lines = data
-  .split("\n")
-  .filter(Boolean)
-  .map((line) => line.split("x").map((item) => Number(item)));
+const lines = parseByLine(data, (line: string) =>
+  line.split("x").map((item) => Number(item)),
+);
 
 function getSurfaceArea(dimensions: number[]): number {
   const [l, w, h] = dimensions;
