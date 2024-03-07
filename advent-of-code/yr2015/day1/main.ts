@@ -1,10 +1,6 @@
-import path from "path";
+import { readFile } from "@/advent-of-code/utils";
 
-const fileDir = import.meta.dir;
-const dataFilePath = path.join(fileDir, "day1.in");
-
-const file = Bun.file(dataFilePath);
-const data = await file.text();
+const data = await readFile(import.meta.dir, "day1.in")
 
 function getCurrentLevel(instructions: string): number {
   return instructions.split("").reduce((acc, char) => {
