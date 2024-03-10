@@ -25,3 +25,14 @@ export function parseByLine<T>(data: string, mapFn: (line: string) => T): T[] {
 export function TODO<T>(message: T): T {
   return message;
 }
+
+export async function writeFile(
+  fileDir: string,
+  filename: string,
+  content: string,
+) {
+  const dataFilePath = path.join(fileDir, filename);
+
+  const file = Bun.file(dataFilePath);
+  await Bun.write(file, content);
+}
