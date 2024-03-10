@@ -45,7 +45,6 @@ function buildGraph(edges: Edge[]): Graph {
 function walk(graph: Graph, shouldWalkFurther: boolean = false): number {
   const srcNodes = Array.from(graph.keys());
   let result = shouldWalkFurther ? -Infinity : Infinity;
-
   const cmp = shouldWalkFurther ? Math.max : Math.min;
 
   function dfs(src: string, visited: Set<string>, weight: number): number {
