@@ -25,5 +25,4 @@ function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
 
   return head;
 }
-
 export { removeNthFromEnd };
