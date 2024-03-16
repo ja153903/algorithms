@@ -13,6 +13,7 @@ type Ingredient = {
   texture: number;
   calories: number;
 };
+
 const ingredients = parseByLine<Ingredient>(data, (line: string) => {
   for (const match of line.matchAll(INGREDIENTS_REGEX)) {
     const ingredient = match.groups?.ingredient ?? "";
