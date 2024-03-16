@@ -32,7 +32,7 @@ export function bfs<T = string | number>(graph: AdjancencyList<T>, src: T) {
 export function dfs<T = string | number>(
   graph: AdjancencyList<T>,
   visited: Set<T>,
-  node: T,
+  node: T
 ) {
   console.log(`Visiting Node(value=${node})`);
 
