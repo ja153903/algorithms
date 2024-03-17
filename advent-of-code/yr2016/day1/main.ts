@@ -1,4 +1,4 @@
-import { TODO, readFile } from "@/advent-of-code/utils";
+import { readFile } from "@/advent-of-code/utils";
 
 const data = await readFile(import.meta.dir, "day1.in");
 
