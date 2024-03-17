@@ -1,9 +1,4 @@
 function insert(intervals: number[][], newInterval: number[]): number[][] {
-  // 1. find the intervals that are strictly less than the newInterval
-  // and add them to them to the result
-  // 2. handle all possible merges
-  // 3. insert new interval
-  // 4. insert the rest
   const result: number[][] = [];
   let i = 0;
 
