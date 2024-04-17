@@ -1,20 +1,20 @@
 function maxFrequencyElements(nums: number[]): number {
-  const counter = new Map<number, number>();
+  const counter = new Map<number, number>()
   nums.forEach((num) => {
-    counter.set(num, (counter.get(num) ?? 0) + 1);
-  });
+    counter.set(num, (counter.get(num) ?? 0) + 1)
+  })
 
-  const maxFrequency = Math.max(...counter.values());
+  const maxFrequency = Math.max(...counter.values())
 
-  let res = 0;
+  let res = 0
 
   for (const value of counter.values()) {
     if (value === maxFrequency) {
-      res += value;
+      res += value
     }
   }
 
-  return res;
+  return res
 }
 
-export { maxFrequencyElements };
+export { maxFrequencyElements }

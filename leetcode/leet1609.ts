@@ -1,39 +1,39 @@
-import { IMPOSSIBLE_TO_NARROW_ERROR } from "@/constants/error";
-import type { TreeNode } from "@/data-structures/trees";
+import { IMPOSSIBLE_TO_NARROW_ERROR } from "@/constants/error"
+import type { TreeNode } from "@/data-structures/trees"
 
 // This algorithms runs in O(n) time and space
 function isEvenOddTree(root: TreeNode | null): boolean {
   if (!root) {
-    return false;
+    return false
   }
 
-  const nodes: number[][] = [];
-  const queue: TreeNode[] = [];
+  const nodes: number[][] = []
+  const queue: TreeNode[] = []
 
-  queue.push(root);
+  queue.push(root)
 
   while (queue.length > 0) {
-    const size = queue.length;
-    const level: number[] = [];
+    const size = queue.length
+    const level: number[] = []
 
     for (let i = 0; i < size; i += 1) {
-      const front = queue.shift();
+      const front = queue.shift()
       if (!front) {
-        throw new Error(IMPOSSIBLE_TO_NARROW_ERROR);
+        throw new Error(IMPOSSIBLE_TO_NARROW_ERROR)
       }
 
-      level.push(front.val);
+      level.push(front.val)
 
       if (front.left) {
-        queue.push(front.left);
+        queue.push(front.left)
       }
 
       if (front.right) {
-        queue.push(front.right);
+        queue.push(front.right)
       }
     }
 
-    nodes.push(level);
+    nodes.push(level)
   }
 
   for (let i = 0; i < nodes.length; i += 1) {
@@ -42,19 +42,19 @@ function isEvenOddTree(root: TreeNode | null): boolean {
         i % 2 === 0 &&
         (nodes[i][j] % 2 === 0 || (j > 0 && nodes[i][j - 1] >= nodes[i][j]))
       ) {
-        return false;
+        return false
       }
 
       if (
         i % 2 === 1 &&
         (nodes[i][j] % 2 === 1 || (j > 0 && nodes[i][j - 1] <= nodes[i][j]))
       ) {
-        return false;
+        return false
       }
     }
   }
 
-  return true;
+  return true
 }
 
-export { isEvenOddTree };
+export { isEvenOddTree }

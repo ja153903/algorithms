@@ -1,41 +1,41 @@
 function minimumLength(s: string): number {
-  let left = 0;
-  let right = s.length - 1;
-  const list = s.split("");
+  let left = 0
+  let right = s.length - 1
+  const list = s.split("")
 
   while (left < right) {
     if (list[left] !== list[right]) {
-      break;
+      break
     }
 
-    const leftChar = s[left];
-    let leftStart = left;
-    let leftCount = 0;
+    const leftChar = s[left]
+    let leftStart = left
+    let leftCount = 0
 
     while (left <= right && s[left] === leftChar) {
-      leftCount += 1;
-      left += 1;
+      leftCount += 1
+      left += 1
     }
 
-    const rightChar = s[right];
-    let rightStart = right;
-    let rightCount = 0;
+    const rightChar = s[right]
+    let rightStart = right
+    let rightCount = 0
 
     while (left <= right && s[right] === rightChar) {
-      rightCount += 1;
-      right -= 1;
+      rightCount += 1
+      right -= 1
     }
 
     for (let i = leftStart; i < leftStart + leftCount; i += 1) {
-      list[i] = "";
+      list[i] = ""
     }
 
     for (let i = rightStart - rightCount + 1; i < rightStart + 1; i += 1) {
-      list[i] = "";
+      list[i] = ""
     }
   }
 
-  return list.filter((item) => !!item).length;
+  return list.filter((item) => !!item).length
 }
 
-export { minimumLength };
+export { minimumLength }

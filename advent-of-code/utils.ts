@@ -1,20 +1,20 @@
-import path from "path";
+import path from "path"
 
 export async function readFile(
   fileDir: string,
-  filename: string,
+  filename: string
 ): Promise<string> {
-  const dataFilePath = path.join(fileDir, filename);
+  const dataFilePath = path.join(fileDir, filename)
 
-  const file = Bun.file(dataFilePath);
-  return await file.text();
+  const file = Bun.file(dataFilePath)
+  return await file.text()
 }
 
 export function parseByLine<T>(data: string, mapFn: (line: string) => T): T[] {
   return data
     .split("\n")
     .filter(Boolean)
-    .map((line) => mapFn(line));
+    .map((line) => mapFn(line))
 }
 
 /**
@@ -23,16 +23,16 @@ export function parseByLine<T>(data: string, mapFn: (line: string) => T): T[] {
  * since we haven't solved the problem yet
  */
 export function TODO<T>(message: T): T {
-  return message;
+  return message
 }
 
 export async function writeFile(
   fileDir: string,
   filename: string,
-  content: string,
+  content: string
 ) {
-  const dataFilePath = path.join(fileDir, filename);
+  const dataFilePath = path.join(fileDir, filename)
 
-  const file = Bun.file(dataFilePath);
-  await Bun.write(file, content);
+  const file = Bun.file(dataFilePath)
+  await Bun.write(file, content)
 }
