@@ -1,10 +1,3 @@
-type Coordinate = {
-  r0: number
-  c0: number
-  r1: number
-  c1: number
-}
-
 function findFarmland(land: number[][]): number[][] {
   // if we find a 1, start a search for the top left, top right, bottom left, and bottom right corners that all still have 1s
   const result: number[][] = []
