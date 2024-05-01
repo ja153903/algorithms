@@ -1,6 +1,7 @@
 import { IMPOSSIBLE_TO_NARROW_ERROR } from "@/constants/error"
 
 export class Trie {
+  /** Determines whether this Trie node contains the word leading up to it */
   private hasWord: boolean
   private children: Map<string, Trie>
 
