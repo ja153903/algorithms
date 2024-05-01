@@ -1,5 +1,6 @@
 import { TODO, readFile } from "@/advent-of-code/utils"
 
+// TODO: Solve this later
 const data = await readFile(import.meta.dir, "day18.in")
 
 const part1 = TODO<string>("Solve later")
