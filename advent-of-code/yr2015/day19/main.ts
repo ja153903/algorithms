@@ -12,11 +12,6 @@ const parsedData = parseByLine<unknown>(data, (line: string) => {
   return line
 })
 
-// TODO: These should not be entries in a record because each key
-// can have multiple mappings at some point
-const mapping = Object.fromEntries(parsedData.slice(0, -1) as Entry[])
-const sequence = (parsedData.at(-1) as string) ?? ""
-
 const part1 = TODO<string>("Solve later")
 
 console.log(`AoC 2015 - Day 19 - Part 1: ${part1}`)
