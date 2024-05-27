@@ -1,4 +1,4 @@
-import { parseArgs } from "bun"
+import { parseArgs } from "util"
 import { mkdir } from "node:fs/promises"
 
 const { values } = parseArgs({
@@ -12,6 +12,7 @@ const { values } = parseArgs({
     },
   },
   strict: true,
+  allowPositionals: true
 })
 
 async function mkYearDir(year: string | undefined) {
