@@ -65,6 +65,13 @@ async function touchDayFiles(
   await Bun.write(inputTestFile, "")
 }
 
+console.log(`==> Creating directory for Advent of Code - Year ${values.year}`)
 await mkYearDir(values.year)
+
+console.log(`==> Creating directory for Advent of Code - Year ${values.year} - Day ${values.day}`)
 await mkDayDir(values.year, values.day)
+
+console.log(`==> Creating files for Advent of Code - Year ${values.year} - Day ${values.day}`)
 await touchDayFiles(values.year, values.day)
+
+console.log(`==> Finished bootstrapping for Advent of Code - Year ${values.year} - Day ${values.day}`)
