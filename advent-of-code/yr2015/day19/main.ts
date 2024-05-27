@@ -34,17 +34,5 @@ for (const mapping of mappings) {
 
 console.log(`AoC 2015 - Day 19 - Part 1: ${molecules.size}`)
 
-// TODO: To solve this problem we just have to make sure we BFS
-// until we found the shortest such path to our desired result
-function bfs(): number {
-  // const queue = [("e", 0)]
-  // const visited = new Set<string>()
-  //
-  // while (queue.length > 0) {
-  // }
-
-  return 0;
-}
-
-
-console.log(`AoC 2015 - Day 19 - Part 2: ${bfs()}`)
+// TODO: Solve part 2 for this problem
+console.log(`AoC 2015 - Day 19 - Part 2: ${""}`)
