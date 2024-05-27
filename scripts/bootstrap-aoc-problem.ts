@@ -12,7 +12,7 @@ const { values } = parseArgs({
     },
   },
   strict: true,
-  allowPositionals: true
+  allowPositionals: true,
 })
 
 async function mkYearDir(year: string | undefined) {
@@ -68,10 +68,16 @@ async function touchDayFiles(
 console.log(`==> Creating directory for Advent of Code - Year ${values.year}`)
 await mkYearDir(values.year)
 
-console.log(`==> Creating directory for Advent of Code - Year ${values.year} - Day ${values.day}`)
+console.log(
+  `==> Creating directory for Advent of Code - Year ${values.year} - Day ${values.day}`
+)
 await mkDayDir(values.year, values.day)
 
-console.log(`==> Creating files for Advent of Code - Year ${values.year} - Day ${values.day}`)
+console.log(
+  `==> Creating files for Advent of Code - Year ${values.year} - Day ${values.day}`
+)
 await touchDayFiles(values.year, values.day)
 
-console.log(`==> Finished bootstrapping for Advent of Code - Year ${values.year} - Day ${values.day}`)
+console.log(
+  `==> Finished bootstrapping for Advent of Code - Year ${values.year} - Day ${values.day}`
+)
