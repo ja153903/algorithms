@@ -1,5 +1,9 @@
 import path from "path"
 
+/**
+ * `readFile` takes the appropriate directory and filename
+ * construct a path to the file and then uses `Bun.file` to read it
+ */
 export async function readFile(
   fileDir: string,
   filename: string
