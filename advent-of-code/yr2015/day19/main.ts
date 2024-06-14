@@ -54,14 +54,10 @@ function bfs() {
     for (let i = 0; i < current.length; i += 1) {
       for (let j = i; j < current.length; j += 1) {
         const slice = current.slice(i, j + 1)
-        // given this substring, we want to check if there exists a mapping that we can use to replace the substring with
 
         const relevantMappings = mappings.filter(
           ([_key, value]) => value === slice
         )
-
-        // given all relevant mappings, then we should now replace the key with the value
-        // and bring it back to the string
 
         for (const [key, _value] of relevantMappings) {
           const replaced = `${current.slice(0, i)}${key}${current.slice(j + 1)}`
