@@ -35,8 +35,8 @@ for (const mapping of mappings) {
 console.log(`AoC 2015 - Day 19 - Part 1: ${molecules.size}`)
 
 // TODO: Figure out a better way of doing this
-// Currently it is too inefficient to start at e
-// Think about starting backwards until we get to e
+//       Currently it is too inefficient to start at e
+//       Think about starting backwards until we get to e
 
 function bfs() {
   const queue: [string, number][] = [[start, 0]]
