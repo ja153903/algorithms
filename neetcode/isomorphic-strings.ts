@@ -3,7 +3,6 @@ function isIsomorphic(s: string, t: string): boolean {
     return false
   }
 
-  // TODO: Create a BiMap data structure that we can reuse
   const mapping = new Map<string, string>()
   const revMapping = new Map<string, string>()
 

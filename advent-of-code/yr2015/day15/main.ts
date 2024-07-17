@@ -45,9 +45,6 @@ function computeScore({
 }): number {
   let res = 0
 
-  // TODO: we want to find a solution for this such that
-  // we can find a general solution to generating n numbers
-  // that sum up to n (hard coding for current restraint)
   for (let i = 1; i < 100; i += 1) {
     for (let j = 1; j < 100; j += 1) {
       for (let k = 1; k < 100; k += 1) {
